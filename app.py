@@ -35,6 +35,7 @@ app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=devi
             
         # name = "dashboard",
         url_base_pathname='/dashboard/charts/',)
+server = app.server
 
 app.layout = html.Div([
     html.Div([
