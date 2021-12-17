@@ -31,15 +31,15 @@ data = db.find('original_member_data', {} )
 
 graph = department_graph(data)
 fig= graph.create_graphs_bar()
-dash_app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}],
+app = dash.Dash(__name__, meta_tags=[{"name": "viewport", "content": "width=device-width"}],
             
         # name = "dashboard",
         url_base_pathname='/dashboard/charts/',)
 
-dash_app.layout = html.Div([
+app.layout = html.Div([
     html.Div([
         html.Div([
-            html.Img(src=dash_app.get_asset_url('sklogo.jpg'),
+            html.Img(src=app.get_asset_url('sklogo.jpg'),
                     id='corona-image',
                     style={
                         "height": "60px",
@@ -530,4 +530,4 @@ dash_app.layout = html.Div([
 
 
 if __name__ == '__main__':
-    dash_app.run_server(debug=True)
+    app.run_server(debug=True)
